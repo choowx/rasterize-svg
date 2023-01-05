@@ -1,0 +1,59 @@
+{
+    "name": "choowx/rasterize-svg",
+    "description": "A PHP library for converting SVG to JPEG, PNG, and WEBP",
+    "keywords": [
+        "choowx",
+        "rasterize-svg",
+        "rasterize",
+        "convert",
+        "svg",
+        "jpeg",
+        "jpg",
+        "png",
+        "webp",
+        "php"
+    ],
+    "homepage": "https://github.com/choowx/rasterize-svg",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Choo Wen Xuan",
+            "email": "choowenxuan@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "spatie/temporary-directory": "^2.1",
+        "symfony/process": "^6.2"
+    },
+    "require-dev": {
+        "pestphp/pest": "^1.20",
+        "laravel/pint": "^1.2",
+        "spatie/pest-plugin-snapshots": "^1.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Choowx\\RasterizeSvg\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Choowx\\RasterizeSvg\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
