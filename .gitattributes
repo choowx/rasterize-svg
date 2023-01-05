@@ -13,3 +13,6 @@
 /art                     export-ignore
 /docs                    export-ignore
 /UPGRADING.md            export-ignore
+
+# All test snapshots and text stubs must have LF line endings
+tests/**/__snapshots__/** text eol=lf
