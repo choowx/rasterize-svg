@@ -16,4 +16,3 @@
 
 # All test snapshots and text stubs must have LF line endings
 tests/**/__snapshots__/** text eol=lf
-tests/**/__snapshots__/**/SvgTest__it_can_rasterize_to_image__*.txt binary

@@ -10,10 +10,20 @@ beforeEach(function () {
 });
 
 it('can rasterize to image', function () {
-    assertMatchesSnapshot($this->svg->toJpeg());
-    assertMatchesSnapshot($this->svg->toJpg());
-    assertMatchesSnapshot($this->svg->toPng());
-    assertMatchesSnapshot($this->svg->toWebp());
+    file_put_contents($jpeg = __DIR__.'/test.jpeg', $this->svg->toJpeg());
+    file_put_contents($jpg = __DIR__.'/test.jpg', $this->svg->toJpg());
+    file_put_contents($png = __DIR__.'/test.png', $this->svg->toPng());
+    file_put_contents($webp = __DIR__.'/test.webp', $this->svg->toWebp());
+
+    assertMatchesFileHashSnapshot($jpeg);
+    assertMatchesFileHashSnapshot($jpg);
+    assertMatchesFileHashSnapshot($png);
+    assertMatchesFileHashSnapshot($webp);
+
+    unlink($jpeg);
+    unlink($jpg);
+    unlink($png);
+    unlink($webp);
 });
 
 it('can rasterize to image and save it as file', function () {
