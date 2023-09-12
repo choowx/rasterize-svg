@@ -30,7 +30,7 @@
     "require-dev": {
         "pestphp/pest": "^2.15",
         "laravel/pint": "^1.0",
-        "spatie/pest-plugin-snapshots": "^2.1"
+        "sapientpro/image-comparator": "^1.0"
     },
     "autoload": {
         "psr-4": {
