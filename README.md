@@ -6,14 +6,26 @@
 
 ## Installation
 
-You can install the package via composer:
+### Prerequisites
 
+Install Node.js (npm will be included automatically):
+   - Download and install from [nodejs.org](https://nodejs.org/)
+   - Choose the "LTS" (Long Term Support) version for stability
+   - After installation, verify everything is working by opening a terminal/command prompt and running:
+     ```bash
+     node --version
+     npm --version
+     ```
+Both commands should display version numbers if the installation was successful.
+
+### Package Installation
+
+1. Install the PHP package via composer:
 ```bash
 composer require choowx/rasterize-svg
 ```
 
-This package relies on the `sharp` js package being available on your system. In most cases you can accomplish this by issue this command in your project.
-
+2. Install the required Node.js dependency:
 ```bash
 npm install sharp
 ```
@@ -29,6 +41,9 @@ $jpegBinaryString = Svg::make($svgString)->toJpeg();
 $jpegBinaryString = Svg::make($svgString)->toJpg(); // Alias of toJpeg()
 $pngBinaryString = Svg::make($svgString)->toPng();
 $webpBinaryString = Svg::make($svgString)->toWebp();
+
+// Resize the image to 100px wide and 100px high
+$pngBinaryString = Svg::make($svgString, ['resize' => ['width' => 100, 'height' => 100]])->toPng();
 ```
 
 If you want to straight away save the rasterized image on disk:
