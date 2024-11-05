@@ -4,6 +4,8 @@
 [![Tests](https://img.shields.io/github/actions/workflow/status/choowx/rasterize-svg/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/choowx/rasterize-svg/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/choowx/rasterize-svg.svg?style=flat-square)](https://packagist.org/packages/choowx/rasterize-svg)
 
+This package uses [Sharp](https://sharp.pixelplumbing.com/), a high-performance Node.js image processing library. Sharp is one of the fastest Node.js modules for converting and resizing images.
+
 ## Installation
 
 ### Prerequisites
@@ -19,6 +21,7 @@ Install Node.js (npm will be included automatically):
 Both commands should display version numbers if the installation was successful.
 
 ### Package Installation
+At the root of your PHP project:
 
 1. Install the PHP package via composer:
 ```bash
@@ -29,6 +32,7 @@ composer require choowx/rasterize-svg
 ```bash
 npm install sharp
 ```
+This will create a node_modules directory, package-lock.json and package.json
 
 ## Usage
 
