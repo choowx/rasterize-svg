@@ -44,6 +44,11 @@ class SharpSvgRasterizer
             $this->format->value,
         ];
 
+        $options = $this->svg->getOptions();
+        if ($options) {
+            $command[] = json_encode($options);
+        }
+
         $process = new Process(
             command: $command,
             cwd: __DIR__.'/../bin',
@@ -53,6 +58,10 @@ class SharpSvgRasterizer
         $process->run();
 
         $this->cleanupTemporarySvgDirectory();
+
+        if ($process->getErrorOutput()) {
+            throw new \Exception($process->getErrorOutput());
+        }
 
         return $process->getOutput();
     }
