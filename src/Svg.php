@@ -7,15 +7,28 @@ use Choowx\RasterizeSvg\Enums\Format;
 class Svg
 {
     protected string $svg;
+    protected array $options = [];
 
-    public function __construct(string $svg)
+    public function __construct(string $svg, array $options = [])
     {
         $this->svg = $svg;
+        $this->options = $options;
     }
 
-    public static function make(string $svg): self
+    public static function make(string $svg, array $options = []): self
     {
-        return new static($svg);
+        return new static($svg, $options);
+    }
+
+    public function setOptions(array $options): self
+    {
+        $this->options = $options;
+        return $this;
+    }
+
+    public function getOptions(): array
+    {
+        return $this->options;
     }
 
     public function toString(): string
